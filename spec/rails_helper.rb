@@ -9,6 +9,8 @@ require 'spec_helper'
 require 'support/database_cleaner'
 require 'support/factory_bot'
 require 'support/shoulda'
+require 'support/file_spec_helper'
+require 'support/carrier_wave'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
