@@ -10,7 +10,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*_args)
-    ''
+    'https://s3.us-east-2.amazonaws.com/uploads.sartori.twitter/defaults/download.png'
   end
 
   process scale: [200, 300]
