@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::Allowlist
 
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :banner, BannerUploader
+
   acts_as_paranoid
 
   devise :database_authenticatable,

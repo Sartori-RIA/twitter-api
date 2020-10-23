@@ -6,11 +6,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/avatars/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   def default_url(*_args)
-    'https://s3.us-east-2.amazonaws.com/uploads.sartori.twitter/defaults/download.png'
+    'https://s3.us-east-2.amazonaws.com/uploads.sartori.twitter/defaults/default_avatar.png'
   end
 
   process scale: [200, 300]
