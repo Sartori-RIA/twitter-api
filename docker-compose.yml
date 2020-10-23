@@ -1,0 +1,42 @@
+version: "3.1"
+
+services:
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: twitter_mailcatcher
+    tty: true
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+  db:
+    image: postgres:10-alpine
+    container_name: twitter_db
+    ports:
+      - 5432:5432
+    tty: true
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+
+  adminer:
+    image: adminer
+    container_name: twitter_adminer
+    ports:
+      - 8080:8080
+
+  api:
+    image: cookiecode/base-ruby-on-rails
+    container_name: twitter_api
+    ports:
+      - 80:3000
+    volumes:
+      - .:/var/www
+      - .bundle:/usr/local/bundle
+      - .coverage:/var/www/.coverage
+    stdin_open: true
+    tty: true
+    links:
+      - db
+      - mailcatcher
