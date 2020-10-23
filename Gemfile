@@ -6,10 +6,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
+gem 'devise-argon2'
+gem 'devise-encryptable'
+gem 'devise-i18n'
+gem 'devise-jwt', '~> 0.7.0'
+gem 'dry-configurable', '0.9.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rack-cors'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails-i18n'
 gem 'rubocop-rails'
 
 group :development, :test do
