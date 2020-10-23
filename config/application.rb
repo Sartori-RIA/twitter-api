@@ -24,6 +24,8 @@ module Twitter
 
     ENV.update YAML.load_file('config/application.yml')[Rails.env]
 
+    config.middleware.use Rack::Attack
+
     config.api_only = true
   end
 end
