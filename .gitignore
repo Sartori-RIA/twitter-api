@@ -28,3 +28,4 @@
 *.iml
 .idea
 .DS_Store
+config/application.yml
