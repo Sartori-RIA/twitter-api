@@ -1,7 +1,7 @@
 database: &database
   db.username: postgres
   db.password: postgres
-  db.host: db
+  db.host: localhost
 
 aws: &aws
   aws.user:
@@ -34,15 +34,5 @@ production:
   db.username:
   db.password:
   db.host:
-  mailer.address: smtp.gmail.com
-  mailer.port: '587'
-  mailer.host:
-  mailer.user_name:
-  mailer.password:
-  mailer.domain: smtp.gmail.com
-  aws.user:
-  aws.address:
-  aws.region:
-  aws.access_key_id:
-  aws.secret_access_key:
-  aws.s3_directory:
+  <<: *mailer
+  <<: *aws

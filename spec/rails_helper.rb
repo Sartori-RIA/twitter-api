@@ -6,11 +6,14 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 
 require 'rspec/rails'
 require 'spec_helper'
+require 'devise/jwt/test_helpers'
+
 require 'support/database_cleaner'
 require 'support/factory_bot'
 require 'support/shoulda'
-require 'support/file_spec_helper'
 require 'support/carrier_wave'
+require 'support/helpers/file_spec_helper'
+require 'support/helpers/header_spec_helper'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

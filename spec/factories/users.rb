@@ -6,7 +6,7 @@ FactoryBot.define do
 
     password { '123123123' }
 
-    avatar { FileSpecHelper.avatar }
-    banner { FileSpecHelper.banner }
+    avatar { Helpers::FileSpecHelper.avatar }
+    banner { Helpers::FileSpecHelper.banner }
   end
 end
