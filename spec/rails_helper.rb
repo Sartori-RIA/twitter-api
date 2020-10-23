@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'devise/jwt/test_helpers'
 
+require 'support/simplecov'
 require 'support/database_cleaner'
 require 'support/factory_bot'
 require 'support/shoulda'
@@ -22,6 +23,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include Helpers::HeaderSpecHelper
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true

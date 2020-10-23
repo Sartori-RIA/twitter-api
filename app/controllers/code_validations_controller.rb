@@ -1,11 +1,11 @@
 class CodeValidationsController < ApplicationController
-  load_resource find_by: :reset_password_token
+  before_action :load_user
 
   def create
     if @user.nil?
       render json: {}, status: :not_found
     else
-      token, payload = Warden::JWTAuth::UserEncoder.new.call(@credential, :credential, nil)
+      token, payload = Warden::JWTAuth::UserEncoder.new.call(@user, :user, nil)
       whitelist = AllowlistedJwt.new(whitelist_params(payload))
       whitelist.save
       render json: {token: token}
@@ -14,8 +14,12 @@ class CodeValidationsController < ApplicationController
 
   protected
 
+  def load_user
+    @user = User.find_by_reset_password_token(code_params)
+  end
+
   def code_params
-    params.require(:code)
+    params.require(:reset_password_token)
   end
 
   def whitelist_params(payload)

@@ -1,5 +1,5 @@
 class PasswordsController < Devise::PasswordsController
-  load_resource find_by: :email
+  before_action :load_user
 
   def create
     if @user.nil?
@@ -12,5 +12,15 @@ class PasswordsController < Devise::PasswordsController
       UserMailer.with(user: @user, code: code).password_reset_code.deliver_now!
       render json: {}, status: :ok
     end
+  end
+
+  protected
+
+  def load_user
+    @user = User.find_by_email(user_params)
+  end
+
+  def user_params
+    params.require(:email)
   end
 end

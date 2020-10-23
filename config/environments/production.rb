@@ -102,4 +102,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'api.alertamed.com.br', protocol: 'https' }
+  config.action_mailer.smtp_settings = {
+      address: ENV["mailer.address"],
+      port: ENV["mailer.port"],
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV["mailer.user_name"],
+      password: ENV["mailer.password"],
+      domain: ENV["mailer.domain"],
+      openssl_verify_mode: "none",
+  }
 end

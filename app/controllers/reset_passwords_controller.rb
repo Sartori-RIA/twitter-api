@@ -2,10 +2,10 @@ class ResetPasswordsController < ApplicationController
   authorize_resource class: User
 
   def update
-    if current_ability.update(reset_params)
-      render json: current_ability
+    if current_user.update(reset_params)
+      render json: current_user
     else
-      render json: current_ability.errors, status: :unprocessable_entity
+      render json: current_user.errors, status: :unprocessable_entity
     end
   end
 

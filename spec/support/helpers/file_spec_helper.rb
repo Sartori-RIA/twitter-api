@@ -7,11 +7,11 @@ module Helpers
       end
 
       def avatar
-        File.open(Dir[path_to_file('default_avatar.png')].sample)
+        File.open(path_to_file('default_avatar.png'))
       end
 
       def banner
-        File.open(Dir[path_to_file('default_banner.png')].sample)
+        File.open(path_to_file('default_banner.jpeg'))
       end
 
       private

@@ -28,4 +28,11 @@ class User < ApplicationRecord
       break code unless User.find_by(reset_password_token: code)
     end
   end
+
+  def password_salt
+    'no salt'
+  end
+
+  def password_salt=(new_salt) end
+
 end
