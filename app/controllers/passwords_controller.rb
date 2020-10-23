@@ -1,0 +1,16 @@
+class PasswordsController < Devise::PasswordsController
+  load_resource find_by: :email
+
+  def create
+    if @user.nil?
+      render json: {}, status: :not_found
+    else
+      code = @user.generate_code
+      @user.reset_password_token = code
+      @user.reset_password_sent_at = Time.now.utc
+      @user.save
+      UserMailer.with(user: @user, code: code).password_reset_code.deliver_now!
+      render json: {}, status: :ok
+    end
+  end
+end
