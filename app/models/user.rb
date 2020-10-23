@@ -16,8 +16,15 @@ class User < ApplicationRecord
          :jwt_authenticatable,
          jwt_revocation_strategy: self
 
+  has_many :postages
+
   validates :name, :user_name, presence: true
   validates :user_name, uniqueness: true
+
+  include PgSearch::Model
+
+  pg_search_scope :search,
+                  against: %w[name user_name email]
 
   def generate_code
     loop do
