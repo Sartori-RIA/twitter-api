@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'api-pagination'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'cancancan'
 gem 'devise'
@@ -13,6 +14,7 @@ gem 'devise-encryptable'
 gem 'devise-i18n'
 gem 'devise-jwt', '~> 0.7.0'
 gem 'dry-configurable', '0.9.0'
+gem 'kaminari'
 gem 'paranoia', '~> 2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pg_search'

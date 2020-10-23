@@ -10,7 +10,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins '*'
     resource '*',
              headers: :any,
-             expose: %i[Authorization],
+             expose: %i[Authorization Total Page Per-Page],
              methods: %i[get post put patch delete options head]
   end
 end
