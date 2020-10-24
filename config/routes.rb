@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :users do
       scope module: :users do
         resources :postages
+        resources :follows
+        resources :followers, only: %i[index]
       end
       collection do
         get 'search' => 'users#search'

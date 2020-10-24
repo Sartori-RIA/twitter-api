@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::Allowlist
 
@@ -17,6 +19,7 @@ class User < ApplicationRecord
          jwt_revocation_strategy: self
 
   has_many :postages
+  has_many :follows
 
   validates :name, :user_name, presence: true
   validates :user_name, uniqueness: true
@@ -41,5 +44,4 @@ class User < ApplicationRecord
   end
 
   def password_salt=(new_salt) end
-
 end
