@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   put 'auth/reset_passwords' => 'reset_passwords#update'
 
   namespace :api do
-    resources :users do
+    resources :users, except: %i[create] do
       scope module: :users do
         resources :postages
         resources :follows
