@@ -28,7 +28,7 @@
       database: &database
         db.username: postgres
         db.password: postgres
-        db.host: localhost
+        db.host: db
       
  + With docker
     + `docker-compose up -d`
