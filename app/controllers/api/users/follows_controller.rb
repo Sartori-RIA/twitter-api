@@ -1,12 +1,10 @@
 module Api
   module Users
     class FollowsController < ApplicationController
-      def index
-        render json: @follows.order(name: :asc)
-      end
+      load_and_authorize_resource
 
-      def show
-        render json: @follow
+      def index
+        render json: @follows
       end
 
       def create
@@ -14,14 +12,6 @@ module Api
 
         if @follow.save
           render json: @follow, status: :created
-        else
-          render json: @follow.errors, status: :unprocessable_entity
-        end
-      end
-
-      def update
-        if @follow.update(follow_params)
-          render json: @follow
         else
           render json: @follow.errors, status: :unprocessable_entity
         end

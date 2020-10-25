@@ -1,10 +1,10 @@
 module Api
   module Users
     class FollowersController < ApplicationController
-      load_resource
+      load_resource class: Follow
 
       def index
-        render json: @followers.order(name: :asc)
+        paginate json: @followers
       end
     end
   end

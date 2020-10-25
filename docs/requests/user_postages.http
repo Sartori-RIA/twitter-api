@@ -1,0 +1,35 @@
+GET http://{{host}}:{{port}}/api/users/94/postages
+Accept: application/json
+
+###
+
+GET http://{{host}}:{{port}}/api/users/94/postages/1
+Accept: application/json
+
+###
+
+POST http://{{host}}:{{port}}/api/users/94/postages
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+ "content": "ehuehue"
+}
+
+###
+
+PUT http://{{host}}:{{port}}/api/users/94/postages/1
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "content": "ASdasd"
+}
+
+###
+
+DELETE http://{{host}}:{{port}}/api/users/94/postages/1
+Accept: application/json
+Authorization: {{token}}

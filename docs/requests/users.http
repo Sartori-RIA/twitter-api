@@ -1,0 +1,24 @@
+GET http://{{host}}:{{port}}/api/users
+Accept: application/json
+
+###
+
+GET http://{{host}}:{{port}}/api/users/94
+Accept: application/json
+
+###
+
+PUT http://{{host}}:{{port}}/api/users/94
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "xablau"
+}
+
+###
+
+DELETE http://{{host}}:{{port}}/api/users/94
+Accept: application/json
+Authorization: {{token}}

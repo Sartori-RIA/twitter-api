@@ -4,7 +4,7 @@ module Api
       load_and_authorize_resource
 
       def index
-        render json: @postages.order(created_at: :desc)
+        paginate json: @postages.order(created_at: :desc)
       end
 
       def show

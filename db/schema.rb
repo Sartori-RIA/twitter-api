@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_10_24_013110) do
   end
 
   add_foreign_key "allowlisted_jwts", "users", on_delete: :cascade
-  add_foreign_key "follows", "follows"
   add_foreign_key "follows", "users"
+  add_foreign_key "follows", "users", column: "follow_id"
   add_foreign_key "postages", "users"
 end

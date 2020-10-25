@@ -1,0 +1,21 @@
+GET http://{{host}}:{{port}}/api/users/44/follows
+Accept: application/json
+Content-Type: application/json
+
+###
+
+POST http://{{host}}:{{port}}/api/users/94/follows/
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "follow_id": 1
+}
+
+###
+
+DELETE http://{{host}}:{{port}}/api/users/94/follows/1
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}

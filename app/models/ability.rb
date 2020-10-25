@@ -3,8 +3,11 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user, _params)
+  def initialize(user, controller_name, params)
     can %i[read search], User
+
+    can %i[read search], Follow, user_id: params[:user_id] if controller_name == 'Api::Users::Follows'
+    can %i[read search], Follow, follow_id: params[:user_id] if controller_name == 'Api::Users::Followers'
     can :read, Postage
 
     return if user.blank?

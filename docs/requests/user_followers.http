@@ -1,0 +1,3 @@
+GET http://{{host}}:{{port}}/api/users/45/followers
+Accept: application/json
+Content-Type: application/json

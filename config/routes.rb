@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :users, except: %i[create] do
       scope module: :users do
         resources :postages
-        resources :follows
+        resources :follows, except: %i[show update]
         resources :followers, only: %i[index]
       end
       collection do
