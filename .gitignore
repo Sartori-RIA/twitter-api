@@ -29,3 +29,4 @@
 .idea
 .DS_Store
 config/application.yml
+coverage
