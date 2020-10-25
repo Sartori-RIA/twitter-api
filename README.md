@@ -1,5 +1,9 @@
 # Sartori Twitter api
 
+[![Build Status](https://travis-ci.com/Sartori-RIA/twitter-api.svg?branch=master)](https://travis-ci.com/Sartori-RIA/twitter-api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a50f8b263360a0f4c1c1/maintainability)](https://codeclimate.com/github/Sartori-RIA/twitter-api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a50f8b263360a0f4c1c1/test_coverage)](https://codeclimate.com/github/Sartori-RIA/twitter-api/test_coverage)
+
 # Requirements
 
 + With docker
