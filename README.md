@@ -37,7 +37,7 @@
     + `rails db:create`
     + `rails db:migrate`
     + `rails db:populate`
-    + `rails s`
+    + `rails s`, open in `http://localhost`
     + to run spec tests: `rspec`
     
 + Without docker
@@ -45,5 +45,5 @@
     + `rails db:create`
     + `rails db:migrate`
     + `rails db:populate`
-    + `rails s`
+    + `rails s`, open in `http://localhost:3000`
     + to run spec tests: `rspec`
