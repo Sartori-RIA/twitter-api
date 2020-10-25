@@ -1,8 +1,9 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=d432c65054d95a5947a4dbe99bf8d921e8d9f4356c6a6327c3b191f6d9ac01ed
-addons:
-  postgresql: 10
+services:
+  - postgresql
+
 before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/application.yml.travis config/application.yml
