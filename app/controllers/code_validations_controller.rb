@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CodeValidationsController < ApplicationController
   before_action :load_user
 
@@ -8,14 +10,14 @@ class CodeValidationsController < ApplicationController
       token, payload = Warden::JWTAuth::UserEncoder.new.call(@user, :user, nil)
       whitelist = AllowlistedJwt.new(whitelist_params(payload))
       whitelist.save
-      render json: {token: token}
+      render json: { token: token }
     end
   end
 
   protected
 
   def load_user
-    @user = User.find_by_reset_password_token(code_params)
+    @user = User.find_by(reset_password_token: code_params)
   end
 
   def code_params
@@ -24,10 +26,10 @@ class CodeValidationsController < ApplicationController
 
   def whitelist_params(payload)
     {
-        user_id: @user.id,
-        jti: payload["jti"],
-        exp: Time.at(payload["exp"]),
-        aud: payload["aud"]
+      user_id: @user.id,
+      jti: payload['jti'],
+      exp: Time.zone.at(payload['exp']),
+      aud: payload['aud']
     }
   end
 end

@@ -23,7 +23,7 @@ RSpec.describe Api::Users::FollowsController, type: :request do
     let!(:user_b) { create(:user) }
     it 'should start to follow other user' do
       attributes = {
-          follow_id: user_b.id
+        follow_id: user_b.id
       }
       post api_user_follows_path(user_id: user.id),
            params: attributes.to_json,

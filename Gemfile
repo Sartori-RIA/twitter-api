@@ -16,7 +16,7 @@ gem 'devise-encryptable'
 gem 'devise-i18n'
 gem 'devise-jwt', '~> 0.7.0'
 gem 'dry-configurable', '0.9.0'
-gem "fog-aws"
+gem 'fog-aws'
 gem 'kaminari'
 gem 'mini_magick'
 gem 'paranoia', '~> 2.2'

@@ -12,7 +12,7 @@ RSpec.describe CodeValidationsController, type: :request do
       user.save
 
       attributes = {
-          reset_password_token: token
+        reset_password_token: token
       }
       post auth_code_path,
            params: attributes.to_json,
@@ -23,7 +23,7 @@ RSpec.describe CodeValidationsController, type: :request do
 
     it 'should throw error 404 when code not exists' do
       attributes = {
-          reset_password_token: 'bacon'
+        reset_password_token: 'bacon'
       }
       post auth_code_path,
            params: attributes.to_json,

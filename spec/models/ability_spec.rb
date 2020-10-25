@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-#RSpec.describe User do
+# RSpec.describe User do
 #  describe "abilities" do
 #    subject(:ability) { Ability.new(user, []) }
 #    let(:user) { nil }
@@ -11,4 +13,4 @@ require 'rails_helper'
 #      it { is_expected.to be_able_to(:manage, Postage.new) }
 #    end
 #  end
-#end
+# end

@@ -19,9 +19,9 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     let!(:user_postage) { posts.sample }
     it 'should request user postage by id' do
       get api_user_postage_path(
-              id: user_postage.id,
-              user_id: user_postage.user_id
-          ),
+        id: user_postage.id,
+        user_id: user_postage.user_id
+      ),
           headers: unauthenticated_header
       expect(response).to have_http_status(:ok)
     end
@@ -34,16 +34,16 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     it 'should create a user postage' do
       attributes = attributes_for(:postage).merge(user_id: user.id)
       post api_user_postages_path(
-               user_id: user_postage.user_id
-           ),
+        user_id: user_postage.user_id
+      ),
            params: attributes.to_json,
            headers: auth_header(user)
       expect(response).to have_http_status(:created)
     end
     it 'should throw error with invalid params' do
       post api_user_postages_path(
-               user_id: user_postage.user_id
-           ),
+        user_id: user_postage.user_id
+      ),
            params: {},
            headers: auth_header(user)
       expect(response).to have_http_status(:unprocessable_entity)
@@ -52,8 +52,8 @@ RSpec.describe Api::Users::PostagesController, type: :request do
       attributes = attributes_for(:postage).merge(user_id: user.id)
 
       post api_user_postages_path(
-               user_id: user_postage.user_id
-           ),
+        user_id: user_postage.user_id
+      ),
            params: attributes.to_json,
            headers: auth_header(user_b)
       expect(response).to have_http_status(:forbidden)
@@ -65,9 +65,9 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     it 'should update a user postage' do
       user_postage.content = 'editado'
       put api_user_postage_path(
-              id: user_postage.id,
-              user_id: user_postage.user_id
-          ),
+        id: user_postage.id,
+        user_id: user_postage.user_id
+      ),
           params: user_postage.to_json,
           headers: auth_header(user)
       expect(response).to have_http_status(:ok)
@@ -75,9 +75,9 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     it 'should trow forbidden status' do
       user_postage.content = 'editado'
       put api_user_postage_path(
-              id: user_postage.id,
-              user_id: user_postage
-          ),
+        id: user_postage.id,
+        user_id: user_postage
+      ),
           params: user_postage.to_json,
           headers: auth_header(user_b)
       expect(response).to have_http_status(:forbidden)
@@ -85,9 +85,9 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     it 'should throw error with invalid params' do
       user_postage.content = nil
       put api_user_postage_path(
-              id: user_postage.id,
-              user_id: user_postage
-          ),
+        id: user_postage.id,
+        user_id: user_postage
+      ),
           params: user_postage.to_json,
           headers: auth_header(user)
       expect(response).to have_http_status(:unprocessable_entity)
@@ -98,17 +98,17 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     let!(:user_postage) { posts.sample }
     it 'should delete user postage' do
       delete api_user_postage_path(
-                 id: user_postage.id,
-                 user_id: user_postage.user_id
-             ),
+        id: user_postage.id,
+        user_id: user_postage.user_id
+      ),
              headers: auth_header(user)
       expect(response).to have_http_status(:no_content)
     end
     it 'should trow forbidden status' do
       delete api_user_postage_path(
-                 id: user_postage.id,
-                 user_id: user_postage.user_id
-             ),
+        id: user_postage.id,
+        user_id: user_postage.user_id
+      ),
              headers: auth_header(user_b)
       expect(response).to have_http_status(:forbidden)
     end

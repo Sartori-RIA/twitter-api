@@ -15,6 +15,7 @@ AllCops:
     - 'config/initializers/*'
     - 'config/environments/*'
     - 'spec/support/*'
+    - 'lib/tasks/populate.rake'
 
 Style/Documentation:
   Enabled: false

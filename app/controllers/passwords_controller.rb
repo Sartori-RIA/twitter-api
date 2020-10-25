@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PasswordsController < Devise::PasswordsController
   before_action :load_user
 
@@ -17,7 +19,7 @@ class PasswordsController < Devise::PasswordsController
   protected
 
   def load_user
-    @user = User.find_by_email(user_params)
+    @user = User.find_by(email: user_params)
   end
 
   def user_params
