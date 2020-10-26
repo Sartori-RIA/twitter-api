@@ -1,3 +1,9 @@
 GET http://{{host}}:{{port}}/api/users/45/followers
 Accept: application/json
 Content-Type: application/json
+
+###
+
+GET http://{{host}}:{{port}}/api/users/45/followers/count
+Accept: application/json
+Content-Type: application/json

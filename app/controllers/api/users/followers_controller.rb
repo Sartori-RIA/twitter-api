@@ -8,6 +8,10 @@ module Api
       def index
         paginate json: @followers, include: :user
       end
+
+      def count
+        render json: {total: @followers.length}
+      end
     end
   end
 end

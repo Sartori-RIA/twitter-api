@@ -10,6 +10,10 @@ module Api
         render json: @follows, include: :follow
       end
 
+      def count
+        render json: {total: @follows.length}
+      end
+
       def create
         @follow = Follow.new(follow_params)
 

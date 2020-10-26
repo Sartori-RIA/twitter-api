@@ -10,6 +10,10 @@ module Api
         paginate json: @postages.order(created_at: :desc), include: :user
       end
 
+      def count
+        render json: {total: @postages.length}
+      end
+
       def show
         render json: @postage, include: :user
       end
