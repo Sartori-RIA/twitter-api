@@ -40,6 +40,8 @@ Rails.application.routes.draw do
       end
       collection do
         get 'search' => 'users#search'
+        get 'check/email' => 'users#email_available?'
+        get 'check/user_name' => 'users#user_name_available??'
       end
     end
   end

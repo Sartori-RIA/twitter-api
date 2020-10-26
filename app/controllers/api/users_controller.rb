@@ -17,6 +17,24 @@ module Api
       render json: @users.order(name: :asc)
     end
 
+    def user_name_available?
+      user = User.find_by(user_name: params[:q])
+      if user.nil?
+        render json: {}, status: :ok
+      else
+        render json: {}, status: :conflict
+      end
+    end
+
+    def email_available?
+      user = User.find_by(email: params[:q])
+      if user.nil?
+        render json: {}, status: :ok
+      else
+        render json: {}, status: :conflict
+      end
+    end
+
     def update
       if @user.update(user_params)
         render json: @user
