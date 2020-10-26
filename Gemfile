@@ -18,6 +18,7 @@ gem 'devise-jwt', '~> 0.7.0'
 gem 'dry-configurable', '0.9.0'
 gem 'fog-aws'
 gem 'kaminari'
+gem 'listen', '~> 3.2'
 gem 'mini_magick'
 gem 'paranoia', '~> 2.2'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -39,7 +40,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.2'
   gem 'mailcatcher'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
