@@ -17,4 +17,11 @@ RSpec.describe Api::Users::FollowersController, type: :request do
       end
     end
   end
+  describe '#GET /api/users/:user_id/followers/count' do
+    it 'should request all user followers total' do
+      get count_api_user_followers_path(user_id: user.id),
+          headers: unauthenticated_header
+      expect(response).to have_http_status(:ok)
+    end
+  end
 end

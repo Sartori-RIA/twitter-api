@@ -15,6 +15,15 @@ RSpec.describe Api::Users::PostagesController, type: :request do
     end
   end
 
+
+  describe '#GET /api/users/:user_id/postages/count' do
+    it 'should request all user postages total' do
+      get count_api_user_postages_path(user_id: user.id),
+          headers: unauthenticated_header
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe '#GET /api/users/:user_id/postages/:id' do
     let!(:user_postage) { posts.sample }
     it 'should request user postage by id' do
