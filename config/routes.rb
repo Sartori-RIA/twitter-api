@@ -30,6 +30,7 @@ Rails.application.routes.draw do
         resources :follows, except: %i[show update] do
           collection do
             get 'count' => 'follows#count'
+            get 'check' => 'follows#check'
           end
         end
         resources :followers, only: %i[index] do

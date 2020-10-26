@@ -4,10 +4,19 @@ module Api
   module Users
     class FollowsController < ApplicationController
       load_and_authorize_resource
-      skip_authorize_resource only: %i[index count]
+      skip_authorize_resource only: %i[index count check]
 
       def index
         render json: @follows, include: :follow
+      end
+
+      def check
+        follow = Follow.find_by(user_id: params[:user_id], follow_id: params[:follow_id])
+        if follow.nil?
+          render json: {}, status: :not_found
+        else
+          render json: follow, status: :ok
+        end
       end
 
       def count

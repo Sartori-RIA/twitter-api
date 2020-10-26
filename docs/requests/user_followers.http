@@ -1,9 +1,9 @@
-GET http://{{host}}:{{port}}/api/users/45/followers
+GET http://{{host}}:{{port}}/api/users/100/followers
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-GET http://{{host}}:{{port}}/api/users/45/followers/count
+GET http://{{host}}:{{port}}/api/users/100/followers/count
 Accept: application/json
 Content-Type: application/json

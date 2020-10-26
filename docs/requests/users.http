@@ -3,7 +3,7 @@ Accept: application/json
 
 ###
 
-GET http://{{host}}:{{port}}/api/users/94
+GET http://{{host}}:{{port}}/api/users/100
 Accept: application/json
 
 ###

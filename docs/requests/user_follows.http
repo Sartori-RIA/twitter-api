@@ -1,10 +1,10 @@
-GET http://{{host}}:{{port}}/api/users/44/follows
+GET http://{{host}}:{{port}}/api/users/100/follows
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-GET http://{{host}}:{{port}}/api/users/44/follows/count
+GET http://{{host}}:{{port}}/api/users/100/follows/count
 Accept: application/json
 Content-Type: application/json
 

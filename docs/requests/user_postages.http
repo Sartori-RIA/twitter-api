@@ -1,4 +1,4 @@
-GET http://{{host}}:{{port}}/api/users/106/postages/1056
+GET http://{{host}}:{{port}}/api/users/100/postages
 Accept: application/json
 
 ###
