@@ -50,7 +50,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'simplecov', require: false
+  gem 'simplecov', '~>0.17.1' ,require: false
   gem 'simplecov-console', require: false
 end
 
