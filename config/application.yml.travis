@@ -20,11 +20,13 @@ development:
   <<: *aws
   <<: *database
   jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
+  front.confirm_url: http://localhost:4200/auth/confirmar
 
 test:
   <<: *mailer
   <<: *database
   jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
+  front.confirm_url: http://localhost:4200/auth/confirmar
 
 production:
   jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85

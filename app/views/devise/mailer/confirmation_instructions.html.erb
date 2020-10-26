@@ -1,0 +1,7 @@
+<p>Seja bem vindo <%= @email %>!</p>
+
+<p>Você pode confirmar a criação da sua conta com o link abaixo, ou copiando e colando a url no seu navegador:</p>
+
+<p><%= ENV["front.confirm_url"] %>?confirmation_token=<%= @token %></p>
+
+<p><%= link_to 'Confirmar minha conta', "#{ENV["front.confirm_url"]}?confirmation_token=#{@token}" %></p>
