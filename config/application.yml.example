@@ -1,39 +1,39 @@
 database: &database
-  db.username: postgres
-  db.password: postgres
-  db.host: localhost
+  DB_USERNAME: postgres
+  DB_PASSWORD: postgres
+  DB_HOST: localhost
 
 aws: &aws
-  aws.access.key.id:
-  aws.secret.access.key:
-  aws.s3.directory:
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
+  AWS_S3_DIRECTORY:
 
 mailer: &mailer
-  mailer.address: smtp.gmail.com
-  mailer.port: '587'
-  mailer.user_name:
-  mailer.password:
-  mailer.domain: gmail.com
+  MAILER_ADDRESS: smtp.gmail.com
+  MAILER_PORT: '587'
+  MAILER_USER_NAME:
+  MAILER_PASSWORD:
+  MAILER_DOMAIN: gmail.com
 
 development:
   <<: *mailer
   <<: *aws
   <<: *database
-  jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
-  front.confirm_url: http://localhost:4200/#/auth/confirmar
+  JWT_KEY: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
+  FRONT_CONFIRM_URLl: http://localhost:4200/#/auth/confirmar
 
 test:
   <<: *mailer
   <<: *database
-  jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
-  front.confirm_url: http://localhost:4200/#/auth/confirmar
+  JWT_KEY: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
+  FRONT_CONFIRM_URL: http://localhost:4200/#/auth/confirmar
 
 production:
-  jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
-  front.confirm_url: http://localhost:4200/#/auth/confirmar
-  db.username: vsrkzkxhfgykjx
-  db.password: 2e5d3cb6df8df0a9954ff2aa172c62e850c360a3299d2e65720008d54ba7123d
-  db.host: ec2-54-234-44-238.compute-1.amazonaws.com
-  db.database: dc1guptaljurbh
+  JWT_KEY: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
+  FRONT_CONFIRM_URL: http://localhost:4200/#/auth/confirmar
+  DB_USERNAME:
+  DB_PASSWORD:
+  DB_HOST:
+  DB_DATABASE:
   <<: *mailer
   <<: *aws
