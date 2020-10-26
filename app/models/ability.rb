@@ -8,7 +8,11 @@ class Ability
 
     can %i[read search], Follow, user_id: params[:user_id] if controller_name == 'Api::Users::Follows'
     can %i[read search], Follow, follow_id: params[:user_id] if controller_name == 'Api::Users::Followers'
-    can :read, Postage
+    if controller_name == 'Api::Users::Postages'
+      can %i[read search], Postage, user_id: params[:user_id]
+    else
+      can %i[read], Postage
+    end
 
     return if user.blank?
 

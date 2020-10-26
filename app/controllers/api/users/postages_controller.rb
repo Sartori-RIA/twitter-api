@@ -4,20 +4,21 @@ module Api
   module Users
     class PostagesController < ApplicationController
       load_and_authorize_resource
+      skip_authorize_resource only: %i[index show]
 
       def index
-        paginate json: @postages.order(created_at: :desc)
+        paginate json: @postages.order(created_at: :desc), include: :user
       end
 
       def show
-        render json: @postage
+        render json: @postage, include: :user
       end
 
       def create
         @postage = Postage.new(postage_params)
 
         if @postage.save
-          render json: @postage, status: :created
+          render json: @postage, include: :user, status: :created
         else
           render json: @postage.errors, status: :unprocessable_entity
         end
@@ -25,7 +26,7 @@ module Api
 
       def update
         if @postage.update(postage_params)
-          render json: @postage
+          render json: @postage, include: :user
         else
           render json: @postage.errors, status: :unprocessable_entity
         end

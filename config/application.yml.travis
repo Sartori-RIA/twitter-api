@@ -1,21 +1,18 @@
 database: &database
-  DB_USERNAME: postgres
-  DB_PASSWORD: postgres
-  DB_HOST: localhost
+  db.username: postgres
+  db.password: postgres
+  db.host: localhost
 
 aws: &aws
-  aws_user:
-  aws_address:
-  aws_region:
-  AWS_ACCESS_KEY_ID:
-  AWS_SECRET_ACCESS_KEY:
-  AWS_S3_DIRECTORY:
+  aws.access.key.id:
+  aws.secret.access.key:
+  aws.s3.directory:
 
 mailer: &mailer
   mailer.address: smtp.gmail.com
   mailer.port: '587'
-  MAILER_USER_NAME: example@email.com
-  MAILER_PASSWORD:
+  mailer.user_name: example@email.com
+  mailer.password:
   mailer.domain: gmail.com
 
 development:
@@ -31,9 +28,9 @@ test:
 
 production:
   jwt_key: 42dcb8f62dd54def56861cee45b61350268713d82c0cbe32013d395638908b1f2217de4dabb95ee3868f9d3063ea040d5304cbfe73e875db4bd5f08704632f85
-  DB_USERNAME:
-  DB_PASSWORD:
-  DB_HOST:
-  DB_DATABASE:
+  db.username:
+  db.password:
+  db.host:
+  db.database:
   <<: *mailer
   <<: *aws

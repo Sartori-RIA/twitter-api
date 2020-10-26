@@ -1,0 +1,19 @@
+POST http://{{host}}:{{port}}/auth/sign_in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "pablo@oconner.info",
+  "password": "123123123"
+}
+
+> {% client.global.set("token", response.headers.valueOf('Authorization')) %}
+
+
+###
+
+DELETE http://{{host}}:{{port}}/auth/sign_out
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
+

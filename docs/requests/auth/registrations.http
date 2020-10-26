@@ -1,0 +1,11 @@
+POST http://{{host}}:3000/auth/sign_up
+Accept: application/json
+Content-Type: application/json
+
+{
+  "password": "123123123",
+  "email": "user@email.com",
+  "user_name": "user_xablau"
+}
+
+###

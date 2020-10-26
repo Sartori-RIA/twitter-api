@@ -31,7 +31,7 @@ namespace :db do
       10.times do
         Postage.create(
           user: user,
-          content: Faker::Lorem.paragraphs(number: 1)
+          content: Faker::Lorem.paragraphs(number: 1)[0]
         )
       end
     end

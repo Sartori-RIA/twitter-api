@@ -6,7 +6,7 @@ module Api
       load_resource class: Follow
 
       def index
-        paginate json: @followers
+        paginate json: @followers, include: :user
       end
     end
   end

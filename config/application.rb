@@ -22,7 +22,7 @@ module Twitter
   class Application < Rails::Application
     config.load_defaults 6.0
 
-    ENV.update YAML.load_file('config/application.yml')[Rails.env]
+    ENV.update YAML.load_file('config/application.yml')[Rails.env] unless Rails.env.production?
 
     config.middleware.use Rack::Attack
 

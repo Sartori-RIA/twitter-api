@@ -26,7 +26,7 @@ RSpec.describe UserMailer, type: :mailer do
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eq([ENV['MAILER_USER_NAME']])
+      expect(mail.from).to eq([ENV['mailer.user_name']])
     end
 
     it 'assigns @name' do
