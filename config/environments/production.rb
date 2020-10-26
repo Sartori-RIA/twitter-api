@@ -106,15 +106,15 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'api.alertamed.com.br', protocol: 'https' }
+  config.action_mailer.default_url_options = { host: 'https://sartori-twitter-api.herokuapp.com/', protocol: 'https' }
   config.action_mailer.smtp_settings = {
-      address: ENV["mailer.address"],
-      port: ENV["mailer.port"],
+      address: ENV["MAILER_ADDRESS"],
+      port: ENV["MAILER_PORT"],
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: ENV["mailer.user_name"],
-      password: ENV["mailer.password"],
-      domain: ENV["mailer.domain"],
+      user_name: ENV["MAILER_USER_NAME"],
+      password: ENV["MAILER_PASSWORD"],
+      domain: ENV["MAILER_DOMAIN"],
       openssl_verify_mode: "none",
   }
 end
