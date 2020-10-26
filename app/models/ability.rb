@@ -18,7 +18,7 @@ class Ability
 
     can :manage, User, id: user.id
     can :manage, Postage, user_id: user.id
-    can :manage, Follow do |follow|
+    can %i[update create destroy], Follow do |follow|
       follow.user_id == user.id || follow.follow_id == user.id
     end
   end

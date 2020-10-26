@@ -1,12 +1,13 @@
-GET http://{{host}}:{{port}}/api/users/100/follows
+GET http://{{host}}:{{port}}/api/users/1/follow
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-GET http://{{host}}:{{port}}/api/users/100/follows/count
+GET http://{{host}}:{{port}}/api/users/1/followers/count
 Accept: application/json
 Content-Type: application/json
+Authorization: {{token}}
 
 ###
 

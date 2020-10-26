@@ -13,14 +13,14 @@ module Api
       def check
         follow = Follow.find_by(user_id: params[:user_id], follow_id: params[:follow_id])
         if follow.nil?
-          render json: {}, status: :not_found
+          render json: {}, status: :no_content
         else
           render json: follow, status: :ok
         end
       end
 
       def count
-        render json: {total: @follows.length}
+        render json: {total: Follow.where(user_id: params[:user_id]).count}
       end
 
       def create

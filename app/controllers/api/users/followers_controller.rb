@@ -10,7 +10,7 @@ module Api
       end
 
       def count
-        render json: {total: @followers.length}
+        render json: {total: Follow.where(follow_id: params[:user_id]).count}
       end
     end
   end
