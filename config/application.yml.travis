@@ -11,7 +11,7 @@ aws: &aws
 mailer: &mailer
   MAILER_ADDRESS: smtp.gmail.com
   MAILER_PORT: '587'
-  MAILER_USER_NAME:
+  MAILER_USER_NAME: example@email.com
   MAILER_PASSWORD:
   MAILER_DOMAIN: gmail.com
 
