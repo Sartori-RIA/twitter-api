@@ -4,7 +4,7 @@ module Api
   module Users
     class FollowsController < ApplicationController
       load_and_authorize_resource
-      skip_authorize_resource only: %i[index]
+      skip_authorize_resource only: %i[index count]
 
       def index
         render json: @follows, include: :follow

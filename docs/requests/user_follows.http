@@ -4,6 +4,12 @@ Content-Type: application/json
 
 ###
 
+GET http://{{host}}:{{port}}/api/users/44/follows/count
+Accept: application/json
+Content-Type: application/json
+
+###
+
 POST http://{{host}}:{{port}}/api/users/94/follows/
 Accept: application/json
 Content-Type: application/json

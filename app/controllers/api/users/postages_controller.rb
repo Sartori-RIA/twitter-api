@@ -4,7 +4,7 @@ module Api
   module Users
     class PostagesController < ApplicationController
       load_and_authorize_resource
-      skip_authorize_resource only: %i[index show]
+      skip_authorize_resource only: %i[index show count]
 
       def index
         paginate json: @postages.order(created_at: :desc), include: :user
