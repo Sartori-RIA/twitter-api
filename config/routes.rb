@@ -42,7 +42,7 @@ Rails.application.routes.draw do
       collection do
         get 'search' => 'users#search'
         get 'check/email' => 'users#email_available?'
-        get 'check/user_name' => 'users#user_name_available??'
+        get 'check/user_name' => 'users#user_name_available?'
       end
     end
   end
