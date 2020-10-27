@@ -17,7 +17,7 @@ class Ability
     return if user.blank?
 
     can :manage, User, id: user.id
-    can :manage, Postage, user_id: user.id
+    can :manage, Postage, user_id: user.id if params[:user_id].blank?
     can %i[update create destroy], Follow do |follow|
       follow.user_id == user.id || follow.follow_id == user.id
     end
