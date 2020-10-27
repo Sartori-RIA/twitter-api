@@ -23,6 +23,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def asset_host
-    'http://192.168.0.193:3000'
+    'https://sartori-twitter-api.herokuapp.com'
   end
 end
