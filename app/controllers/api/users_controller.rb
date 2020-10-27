@@ -53,6 +53,8 @@ module Api
       params.permit(:email,
                     :password,
                     :name,
+                    :banner,
+                    :avatar,
                     :user_name)
     end
   end

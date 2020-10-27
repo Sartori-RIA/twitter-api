@@ -13,7 +13,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     'https://s3.us-east-2.amazonaws.com/uploads.sartori.twitter/defaults/default_avatar.png'
   end
 
-  process scale: [200, 300]
 
   version :thumb do
     process resize_to_fit: [150, 150]
@@ -24,6 +23,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def asset_host
-    'http://192.168.0.193'
+    'http://192.168.0.193:3000'
   end
 end
